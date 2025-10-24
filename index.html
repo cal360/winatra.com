@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+.container {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  left: 10%;
+  top: 10%;
+  border: 4.2px solid #dcdcdc;
+  display: flex;             /* new */
+  justify-content: space-between;
+  align-items: stretch;
+  box-sizing: border-box;
+  border-radius: 4px;
+  
+  
+ 
+}
+
+body{
+background: #f8f7f5;   /* clean neutral grayish white */
+
+}
+
+.buyNow {
+  display: block;
+  margin: 12px auto 0 auto;
+  padding: 14px 30px;
+  background: linear-gradient(145deg, #00d859, #00b94f);
+  
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+   text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+ box-shadow:
+  0 2px 4px rgba(0, 255, 128, 0.25),
+  inset 0 -4px 8px rgba(0, 0, 0, 0.3),
+  0 0 8px rgba(0, 255, 128, 0.2);
+  position: relative;
+  overflow: hidden;     /* 🔐 Locks shimmer inside */
+  z-index: 1;
+  background-image:
+  linear-gradient(145deg, #1fff94 0%, #00c758 45%, #009c3e 100%),
+  radial-gradient(circle at 30% 20%, rgba(255,255,255,0.12), transparent 70%);
+  
+  text-shadow: 0 2px 4px rgba(0,0,0,0.35);
+  margin-top: 23px;
+  
+  
+ 
+}
+
+.buyNow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.25), transparent);
+  transform: skewX(-20deg);
+  animation: buttonShimmer 5.5s ease-in-out infinite;
+  z-index: 2;
+  pointer-events: none;
+
+}
+.buyNow {
+  transition:
+    transform 0.25s ease 0.2s, /* ⏳ 200ms delay before scale starts */
+    box-shadow 0.25s ease 0.2s,
+    background 0.25s ease 0.2s;
+}
+.buyNow:hover {
+
+  background: linear-gradient(145deg, #1aff80, #00b456);
+  box-shadow:
+    0 0 12px rgba(0, 255, 128, 0.35),
+    0 4px 16px rgba(0, 255, 128, 0.25),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.35);
+	cursor: pointer;
+	
+}
+
+.buyNow:active {
+  background: linear-gradient(145deg, #00b94f, #008f3b);
+  box-shadow:
+    inset 0 2px 4px rgba(0, 0, 0, 0.45),
+    0 0 2px rgba(0, 0, 0, 0.2);
+ 
+  transition: none; /* instant feedback */
+}
+
+@keyframes buttonShimmer {
+  0%   { left: -50%; }
+  50%  { left: 130%; }
+  100% { left: 130%; }
+}
+
+
+h2 {
+  position: absolute;
+  top: 0rem;
+  left: 15%;
+  transform: translate(-50%, -55%);
+  background: #f8f7f5;
+  padding: 0 0.8rem;
+
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-weight: 600;
+  
+  font-size: 2.1rem;
+  line-height: 1;
+  margin: 0;
+  
+}
+.igaming {
+  position: absolute;
+  bottom: -1.1rem;
+  right: 0%;
+  transform: translate(-25%, -50%);
+  background: #f8f7f5;
+  padding: 0 0.8rem;
+  font-family: 'Inter',serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1;
+  margin: 0;
+}
+
+.section {
+  flex: 1;                   /* take equal width */
+  margin: 0%;                /* gap between them */
+ 
+  box-sizing: border-box;
+  margin-top: 0.5rem;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
+}
+
+.img-container{
+	position: relative;
+	top: 5%;
+	width: 97%;
+	left: 1.5%;
+	height: auto;
+	background-color: red;
+	margin-bottom: 60px;
+	border: 5px solid green;
+	min-height: 50%;
+	background: #e6f2e9; /* light green tint */
+  border: 1px solid #009f4d;
+  
+
+}
+
+.img-container2{
+background: none;
+margin-top: 8px;
+border: none;
+}
+
+.im{
+position: relative;
+max-width: 99.5%;
+
+height: auto;
+min-height: 100%;
+border-radius: 3px;
+border: 2px solid grey;
+}
+
+.part{
+margin-top:1rem;
+  font-family:"Spectral",serif;
+  font-size:0.95rem;
+  color:#555;
+  letter-spacing:0.4px;
+  text-align: center;
+}
+.section2{
+margin-top: -10px;
+}
+.divider{
+position: relative;
+top: 1.25%;
+	height: 95%;
+	
+	color: grey;
+	opacity: 0.65;
+}
+.price{
+font-size: 1.5rem;
+text-align: center;
+}
+.disclaimer{
+	text-align: center;
+}
+
+.footLink{
+text-decoration: none;
+color: navy;
+}
+.lock-icon{
+max-width: 35px;
+height: auto;
+text-align: center;
+}
+.cart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* center horizontally */
+  gap: 0.4rem;
+  width: 100%;
+  margin-top: 1rem;          /* spacing from top */
+  border: none;              /* remove debug line */
+  position: relative;        /* normal flow */
+}
+
+.shopping-cart-img{
+	max-width: 20px;
+	height: auto;
+}
+
+.cart-text{
+font-size: 0.9em;
+	font-weight: 300;
+	font-family: inter;
+	.cart-text {
+  font-size: 0.85rem;
+  color: #555;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+}
+
+}
+
+.escrow-icon{
+
+
+}
+
+
+
+
+.cart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  color: #111;
+  margin: 0.25rem 0 0.9rem 0;
+   font-family: "Spectral", serif;
+}
+
+.escrow-icon {
+  display: flex;
+  justify-content: center;   /* centers lock horizontally */
+  align-items: center;       /* centers vertically */
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.lock-icon {
+  width: 35px;
+  height: auto;
+  opacity: 0.9;
+}
+
+.img-container1{
+border-radius: 3px;
+}
+
+.trust-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 22px;
+  width: 81px;
+  z-index: 10;
+  border: rgba(0,0,0,0.3);
+  border: 1px solid red;
+
+  
+}
+
+.left-text-container{
+position: absolute;
+bottom: 15%;
+}
+
+.left-text{
+	font-family: 'Inter', serif;
+	position: relative;
+left: 1.5%;
+	
+}
+body { font-family: 'Inter', sans-serif; color:#222; }
+h2 { font-family: 'Playfair Display', serif; font-weight:600; letter-spacing:-0.5px; }
+
+
+
+/* ====== MOBILE OPTIMIZATION ====== */
+
+@media (max-width: 1024px) {
+  .container {
+    width: 92%;
+    left: 4%;
+    top: 5%;
+    height: 90%;
+    flex-direction: column;
+    align-items: center;
+    border-width: 3px;
+	border-radius: 9px;
+	border: 3px solid #e7e7e7;
+  }
+
+  h2 {
+    position: relative;
+    left: 0;
+    transform: none;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 3rem;
+	margin-bottom: 1rem;
+    padding: 0;
+  }
+
+  .divider {
+    display: none; /* hides vertical divider */
+  }
+
+  .section {
+    width: 100%;
+    padding: 0 4%;
+  }
+
+  .img-container,
+  .img-container2 {
+    width: 100%;
+    left: 0;
+    margin: 1rem 0;
+  }
+
+  .im {
+    width: 90%;
+	left: 5%;
+    border-radius: 6px;
+  }
+
+  .buyNow {
+    width: 90%;
+    max-width: 360px;
+    font-size: 1rem;
+    padding: 14px 0;
+	margin-top: 2.5rem;
+  }
+
+  .price {
+    font-size: 1.5rem;
+  }
+
+  .cart-container {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .left-text-container {
+    position: relative;
+    bottom: auto;
+    left: 0;
+    text-align: center;
+    margin: 3.2rem 0 0 0;
+  }
+
+  .left-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    left: 0;
+  }
+
+  .igaming {
+    position: relative;
+    bottom: 50px;
+    right: auto;
+    transform: none;
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+    font-size: 0.9rem;
+  }
+
+  .lock-icon {
+    width: 28px;
+  }
+
+  body {
+    background: #f9f8f7;
+  }
+  
+  .img-container1{
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+  }
+  .cart-text{
+  font-size: 1.25rem;
+  }
+}
+
+
+/* === Fine-tuning for mobile === */
+@media (max-width: 600px) {
+	
+
+  .container {
+    border-width: 2px;
+    padding-top: 2rem;
+    padding-bottom: 0rem;
+	left: 0px; 
+	top: 0px;
+	width: 100%;
+
+	overflow-x: hidden;
+border: none;
+  }
+
+  h2 {
+    margin: 0 auto 1rem auto;
+	margin-bottom: -1rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .section{
+  width: 100%;
+  margin-bottom: 0;
+  }
+
+  .section1 {
+    padding: 0;
+	
+	
+  }
+
+  .img-container {
+    padding: 0;
+    border-radius: 0px;
+    margin-bottom: 0rem;
+	border-radius: 0px;
+	border-left: none;
+	border-right: none;
+  }
+
+  .price {
+    margin-top: -2.25rem;
+    margin-bottom: 0.5rem;
+	font-size: 2rem;
+  }
+
+  .escrow-icon {
+    margin: 1rem 0;
+	margin-bottom: 2rem;
+  }
+
+  .buyNow {
+    margin-top: 1.25rem;
+    margin-bottom: 0rem;
+    width: 80%;
+  }
+
+  .left-text-container {
+	
+    margin-top: 3rem;
+	margin-bottom: 3.6rem;
+	left: 3%;
+    width: 94%;
+    text-align: center;
+    line-height: 1.4;
+	font-size: 1rem;
+
+	
+	
+	
+  }
+  
+  .img-container2{
+  margin-bottom: 0px;
+  margin-top: 3rem;
+  }
+
+  .im {
+    display: block;
+    width: 95%;
+	position: relative;
+	left: 0%;
+    border-radius: 0px;
+    margin: 0 auto 0.8rem auto;
+  }
+
+  .section2 {
+    margin-top: 0rem;
+    padding: 0;
+	left: 0%;
+	
+
+  }
+
+  .igaming {
+    font-size: 0.9rem;
+    margin-top: 4.35rem;
+    display: block;
+    text-align: center;
+	margin-bottom: 0px;
+  }
+
+  .cart-container {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .cart-text {
+    font-size: 0.9rem;
+  }
+  .img-container1{
+  padding-top: 1rem;
+  padding-bottom: 0rem;
+  }
+
+  .lock-icon {
+    width: 26px;
+  }
+
+  .divider {
+    display: none;
+  }
+}
+
+/* Ultra small screens */
+@media (max-width: 480px) {
+  .buyNow {
+    font-size: 0.9rem;
+  }
+
+  .price {
+    font-size: 1.3rem;
+  }
+
+  .cart-text {
+    font-size: 0.8rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+}
+
+
+
+</style>
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+</head>
+<body>
+  <div class="container">
+    <h2>Winatra.com</h2>
+		
+		
+    <div class="section section1">
+	<div class="img-container img-container1">
+	
+	  <div class="cart-container">
+    <img src="shopping-cart2.webp" class="shopping-cart-img" alt="Shopping cart icon" />
+    <span class="cart-text">Winatra.com | Premium iGaming Domain</span>
+	<br><br>
+	
+  </div>
+	
+	
+	
+<p class="price">€25,000</p>
+
+<div class="escrow-icon" aria-hidden="true"><img class="lock-icon" src="lock-icon2.webp" alt="lock icon"/></div>
+	
+<form action="https://www.escrow.com/checkout" method="post" target="_blank">
+  <input type="hidden" name="type" value="domain_name">
+  <input type="hidden" name="non_initiator_email" value="growforwardsolutions@hotmail.com">
+  <input type="hidden" name="non_initiator_id" value="3471912">
+  <input type="hidden" name="non_initiator_role" value="seller">
+  <input type="hidden" name="title" value="Winatra - Premium Casino Domain">
+  <input type="hidden" name="currency" value="EUR">
+  <input type="hidden" name="domain" value="winatra.com">
+  <input type="hidden" name="price" value="25000">
+  <input type="hidden" name="concierge" value="false">
+  <input type="hidden" name="with_content" value="false">
+  <input type="hidden" name="inspection_period" value="1">
+  <input type="hidden" name="fee_payer" value="buyer">
+  <input type="hidden" name="return_url" value="">
+  <input type="hidden" name="button_types" value="buy_now">
+  <input type="hidden" name="auto_accept" value="">
+  <input type="hidden" name="auto_reject" value="">
+  <input type="hidden" name="item_key" value="undefined">
+  	<button class="buyNow">Buy Now </button>
+  <img src="https://t.escrow.com/1px.gif?name=bin&price=25000&title=Winatra%20-%20Premium%20Casino%20Domain&user_id=3471912" style="display: none;">
+</form>
+	
+	</div>
+	<br><br>
+	<div class="left-text-container">
+	<p class="left-text">Secure transaction via Escrow.com. Funds are fully protected. </p>
+	
+	<p class="left-text">Should you require assistance, please contact: <b>support@reelgods.com</b></p>
+	</div>
+	</div>
+	<hr class="divider">
+    <div class="section section2">
+	
+	<div class="img-container img-container2"><img src="winatra2.webp" class="im" alt="Winatra Promo Banner" /> </div>
+	
+	
+	
+	
+	</div>
+	<h3 class="igaming">Part of the <a class="footLink" href="https://www.reelgods.com">ReelGods.com</a> Collection</h2>
+  </div>
+</body>
+</html>
